@@ -100,6 +100,7 @@ export default function Home() {
           <Image
             src="/images/khel-setu-logo.png"
             alt="Khel Setu Logo Background"
+            fill
             width={600}
             height={400}
             className="object-contain"
