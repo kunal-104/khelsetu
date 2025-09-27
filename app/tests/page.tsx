@@ -177,10 +177,16 @@ export default function TestsPage() {
                       Try AI Prototype
                     </Link>
                   )}
-                  <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
+                    {test.name !== "pushups" && (
+                      <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
+                        <Play size={20} />
+                        {test.hasPrototype ? "View Demo" : "Coming Soon"}
+                      </button>
+                    )}
+                  {/* <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
                     <Play size={20} />
                     {test.hasPrototype ? "View Demo" : "Coming Soon"}
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
