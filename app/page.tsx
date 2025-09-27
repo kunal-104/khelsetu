@@ -69,8 +69,8 @@ export default function Home() {
 
       // Logo background animation on scroll
       gsap.to(".hero-logo", {
-        opacity: 0,
-        scale: 0.8,
+        opacity: 1,
+        scale: 1,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
