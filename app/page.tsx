@@ -5,7 +5,6 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Play, Target, Zap, Shield, Award } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -66,18 +65,6 @@ export default function Home() {
           },
         },
       )
-
-      // Logo background animation on scroll
-      gsap.to(".hero-logo", {
-        opacity: 1,
-        scale: 1,
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      })
     })
 
     return () => ctx.revert()
@@ -92,26 +79,25 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div
+      className="min-h-screen bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}
+    >
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 hero-overlay"></div>
-        <div className="hero-logo absolute inset-0 flex items-center justify-center opacity-10">
-          <Image
-            src="/images/khel-setu-logo.png"
-            alt="Khel Setu Logo Background"
-            fill
-            width={600}
-            height={400}
-            className="object-contain"
-          />
-        </div>
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: 'url("/images/khel-setu-logo.png")' }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div> {/* Dark overlay */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <h1 className="hero-title text-5xl md:text-7xl font-bold text-white mb-6 text-balance drop-shadow-2xl">
+          <h1 className="hero-title text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
             AI-Powered Sports
-            <span className="block text-yellow-400 drop-shadow-2xl text-shadow-strong">Talent Assessment</span>
+            <span className="block text-yellow-400 drop-shadow-2xl text-shadow-strong">
+              Talent Assessment
+            </span>
           </h1>
-          <p className="hero-subtitle text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto text-pretty drop-shadow-xl text-shadow-medium">
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
             Democratizing sports talent assessment in India through cutting-edge AI technology and mobile accessibility
           </p>
           <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
@@ -133,10 +119,10 @@ export default function Home() {
       <section ref={featuresRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl text-shadow-strong">
+            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
               Revolutionary Features
             </h2>
-            <p className="text-xl text-cyan-100 max-w-3xl mx-auto drop-shadow-xl text-shadow-medium">
+            <p className="text-xl text-cyan-100 max-w-3xl mx-auto">
               Our AI-powered platform brings professional sports assessment to every athlete
             </p>
           </div>
@@ -165,10 +151,10 @@ export default function Home() {
       <section ref={testsRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl text-shadow-strong">
+            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
               Fitness Assessments
             </h2>
-            <p className="text-xl text-cyan-100 drop-shadow-xl text-shadow-medium">
+            <p className="text-xl text-cyan-100">
               Comprehensive testing suite for complete athletic evaluation
             </p>
           </div>
