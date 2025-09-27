@@ -48,6 +48,7 @@ export default function TestsPage() {
       name: "Push-ups Test",
       icon: "💪",
       description: "AI-powered push-up counter with form analysis and real-time feedback",
+      thumbnail: "/pushup-exercise-demonstration.jpg",
       videoSrc: "/videos/Push_ups.mp4",
       instructions: [
         "Wear sports shoes during the test",
@@ -64,6 +65,7 @@ export default function TestsPage() {
       name: "Sit-ups Test",
       icon: "🏃",
       description: "Core strength evaluation with precise movement tracking",
+      thumbnail: "/situp-exercise-demonstration.jpg",
       videoSrc: "/videos/Sit_ups.mp4",
       instructions: [
         "Wear sports shoes for stability",
@@ -79,6 +81,7 @@ export default function TestsPage() {
       name: "Vertical Jump Test",
       icon: "⬆️",
       description: "Lower body explosive power measurement using motion analysis",
+      thumbnail: "/vertical-jump-exercise-demonstration.jpg",
       videoSrc: "/vertical-jump-exercise-demonstration.jpg",
       instructions: [
         "Wear appropriate athletic shoes with good grip",
@@ -94,6 +97,7 @@ export default function TestsPage() {
       name: "BMI Test",
       icon: "⚖️",
       description: "Body composition analysis using computer vision measurements",
+      thumbnail: "/bmi-measurement-demonstration.jpg",
       videoSrc: "/videos/B_M_I.mp4",
       instructions: [
         "Perform BMI measurement barefoot",
@@ -109,6 +113,7 @@ export default function TestsPage() {
       name: "Shuttle Run (6×10m)",
       icon: "🏃‍♂️",
       description: "Agility and speed assessment with precise timing",
+      thumbnail: "/shuttle-run-agility-test-demonstration.jpg",
       videoSrc: "/videos/Shuttle_run.mp4",
       instructions: [
         "Measure distance from initial to final point with back camera",
@@ -183,7 +188,8 @@ export default function TestsPage() {
               <div className={index % 2 === 0 ? "order-2" : "order-1"}>
                 <div className="relative group cursor-pointer" onClick={() => setActiveVideo(test.videoSrc)}>
                   <img
-                    src={test.videoSrc || "/placeholder.svg"}
+                    // src={test.videoSrc || "/placeholder.svg"}
+                    src={test.thumbnail || "/placeholder.svg"}
                     alt={`${test.name} demonstration`}
                     className="w-full h-64 object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
                   />
