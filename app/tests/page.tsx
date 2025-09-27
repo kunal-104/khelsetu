@@ -48,7 +48,7 @@ export default function TestsPage() {
       name: "Push-ups Test",
       icon: "💪",
       description: "AI-powered push-up counter with form analysis and real-time feedback",
-      videoSrc: "/pushup-exercise-demonstration.jpg",
+      videoSrc: "\videos\Push_ups.mp4",
       instructions: [
         "Wear sports shoes during the test",
         "Perform on a flat, non-slippery surface",
@@ -64,7 +64,7 @@ export default function TestsPage() {
       name: "Sit-ups Test",
       icon: "🏃",
       description: "Core strength evaluation with precise movement tracking",
-      videoSrc: "/situp-exercise-demonstration.jpg",
+      videoSrc: "\videos\Sit_ups.mp4",
       instructions: [
         "Wear sports shoes for stability",
         "Lie on a flat, even surface",
@@ -94,7 +94,7 @@ export default function TestsPage() {
       name: "BMI Test",
       icon: "⚖️",
       description: "Body composition analysis using computer vision measurements",
-      videoSrc: "/bmi-measurement-demonstration.jpg",
+      videoSrc: "\videos\B_M_I.mp4",
       instructions: [
         "Perform BMI measurement barefoot",
         "Stand on a plain, hard surface",
@@ -109,7 +109,7 @@ export default function TestsPage() {
       name: "Shuttle Run (6×10m)",
       icon: "🏃‍♂️",
       description: "Agility and speed assessment with precise timing",
-      videoSrc: "/shuttle-run-agility-test-demonstration.jpg",
+      videoSrc: "\videos\Shuttle_run.mp4",
       instructions: [
         "Measure distance from initial to final point with back camera",
         "Perform in an open ground or track area",
