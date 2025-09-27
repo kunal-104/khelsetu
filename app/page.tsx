@@ -114,7 +114,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    <div style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}>
+    <div className="bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}>
+
       {/* Features Section */}
       <section ref={featuresRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
