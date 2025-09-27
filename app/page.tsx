@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <div
       className="min-h-screen bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}
+      // style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}
     >
       {/* Hero Section */}
       <section
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+    <div style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}>
       {/* Features Section */}
       <section ref={featuresRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -200,6 +200,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   )
 }
