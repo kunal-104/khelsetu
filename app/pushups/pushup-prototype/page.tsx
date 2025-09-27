@@ -331,7 +331,9 @@ export default function PushupPrototype() {
             Back to Tests
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl text-shadow-strong">
-            AI Push-up <span className="gradient-text">Prototype</span>
+            AI Push-up 
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400">
+              Prototype</span>
           </h1>
           <p className="text-xl text-cyan-100 drop-shadow-xl text-shadow-medium">
             Real-time pose detection and form analysis using TensorFlow.js
