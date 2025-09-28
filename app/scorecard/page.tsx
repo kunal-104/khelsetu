@@ -92,7 +92,8 @@ export default function Scorecard() {
               <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-center relative">
                 <div className="absolute top-4 left-4">
                   <Image
-                    src="/images/khel-setu-logo.png"
+                    src="/Meenal-profile.jpg"
+                    {/* src="/images/khel-setu-logo.png" */}
                     alt="Khel Setu"
                     width={60}
                     height={36}
