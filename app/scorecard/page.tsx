@@ -109,7 +109,7 @@ export default function Scorecard() {
                     className="rounded-lg"
                   />
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-2">Khelsetu Score Card</h2>
+                <h2 className="text-3xl font-bold text-white mb-2">KHELSETU Score Card</h2>
                 <p className="text-blue-100">Physical Fitness Assessment Results</p>
               </div>
 
