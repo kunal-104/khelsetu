@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-3">
             <Image src="/images/khel-setu-logo.png" alt="Khel Setu" width={50} height={30} className="rounded-lg" />
-            <span className="text-xl font-bold gradient-text">Khelsetu</span>
+            <span className="text-xl font-bold gradient-text">KHELSETU</span>
           </Link>
 
           {/* Desktop Navigation */}
