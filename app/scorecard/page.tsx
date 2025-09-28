@@ -35,7 +35,8 @@ export default function Scorecard() {
     age: "17 years",
     gender: "Male",
     id: "AFI-ID-AHRM01234",
-    photo: "/images/scorecard-demo.png",
+    photo: "/Meenal-profile.jpg",
+    // photo: "/images/scorecard-demo.png",
     tests: [
       {
         name: "Push-ups",
