@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Play, Target, Zap, Shield, Award } from "lucide-react"
+import { Play, Target, Zap, Shield, Award, X } from "lucide-react"
 import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,6 +12,8 @@ export default function Home() {
   const heroRef = useRef(null)
   const featuresRef = useRef(null)
   const testsRef = useRef(null)
+
+  const [activeVideo, setActiveVideo] = useState<string | null>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -79,10 +81,7 @@ export default function Home() {
   ]
 
   return (
-    <div
-      className="min-h-screen bg-fixed bg-cover bg-center"
-      // style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}
-    >
+    <div className="min-h-screen bg-fixed bg-cover bg-center">
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -101,7 +100,10 @@ export default function Home() {
             Democratizing sports talent assessment in India through cutting-edge AI technology and mobile accessibility
           </p>
           <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg">
+            <button
+              onClick={() => setActiveVideo("/videos/Intro_Demo.mp4")} // <-- set your demo video here
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg"
+            >
               <Play size={20} />
               Watch Demo
             </button>
@@ -114,94 +116,119 @@ export default function Home() {
           </div>
         </div>
       </section>
-    <div className="bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}>
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
-              Revolutionary Features
-            </h2>
-            <p className="text-xl text-cyan-100 max-w-3xl mx-auto">
-              Our AI-powered platform brings professional sports assessment to every athlete
-            </p>
-          </div>
+      <div className="bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/images/stadium-background.jpg")' }}>
+        {/* Features Section */}
+        <section ref={featuresRef} className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
+                Revolutionary Features
+              </h2>
+              <p className="text-xl text-cyan-100 max-w-3xl mx-auto">
+                Our AI-powered platform brings professional sports assessment to every athlete
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Target, title: "AI Analysis", desc: "Advanced computer vision for precise movement analysis" },
-              { icon: Zap, title: "Real-time Feedback", desc: "Instant performance evaluation and scoring" },
-              { icon: Shield, title: "Cheat Detection", desc: "Sophisticated algorithms prevent assessment fraud" },
-              { icon: Award, title: "Professional Scoring", desc: "Industry-standard benchmarking and certification" },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="feature-card glass-effect p-6 rounded-xl text-center hover:scale-105 transition-transform duration-300"
-              >
-                <feature.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-200">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Test Cards Section */}
-      <section ref={testsRef} className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
-              Fitness Assessments
-            </h2>
-            <p className="text-xl text-cyan-100">
-              Comprehensive testing suite for complete athletic evaluation
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testCards.map((test, index) => (
-              <Link key={index} href={test.href}>
-                <div className="test-card glass-effect p-8 rounded-xl text-center hover:scale-105 transition-all duration-300 cursor-pointer group">
-                  <div className="text-4xl mb-4 animate-float">{test.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                    {test.name}
-                  </h3>
-                  <p className="text-gray-200 text-sm">{test.description}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: Target, title: "AI Analysis", desc: "Advanced computer vision for precise movement analysis" },
+                { icon: Zap, title: "Real-time Feedback", desc: "Instant performance evaluation and scoring" },
+                { icon: Shield, title: "Cheat Detection", desc: "Sophisticated algorithms prevent assessment fraud" },
+                { icon: Award, title: "Professional Scoring", desc: "Industry-standard benchmarking and certification" },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="feature-card glass-effect p-6 rounded-xl text-center hover:scale-105 transition-transform duration-300"
+                >
+                  <feature.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-200">{feature.desc}</p>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-effect p-12 rounded-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Sports Assessment?</h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Join the revolution in democratizing sports talent identification across India
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/register"
-                className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Start Assessment
-              </Link>
-              <Link
-                href="/flow"
-                className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
-              >
-                View Process
-              </Link>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Test Cards Section */}
+        <section ref={testsRef} className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4 drop-shadow-2xl">
+                Fitness Assessments
+              </h2>
+              <p className="text-xl text-cyan-100">
+                Comprehensive testing suite for complete athletic evaluation
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testCards.map((test, index) => (
+                <Link key={index} href={test.href}>
+                  <div className="test-card glass-effect p-8 rounded-xl text-center hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div className="text-4xl mb-4 animate-float">{test.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      {test.name}
+                    </h3>
+                    <p className="text-gray-200 text-sm">{test.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="glass-effect p-12 rounded-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Sports Assessment?</h2>
+              <p className="text-xl text-gray-200 mb-8">
+                Join the revolution in democratizing sports talent identification across India
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/register"
+                  className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Assessment
+                </Link>
+                <Link
+                  href="/flow"
+                  className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+                >
+                  View Process
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div className="relative">
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X size={32} />
+            </button>
+            <video
+              src={activeVideo}
+              controls
+              autoPlay
+              className="max-w-[90vw] max-h-[90vh] rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
+
