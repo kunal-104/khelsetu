@@ -91,7 +91,7 @@ export default function Scorecard() {
               <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-center relative">
                 <div className="absolute top-4 left-4">
                   <Image
-                    src="/Meenal-profile.jpg"
+                    src="/images/khel-setu-logo.png" 
                     alt="Khel Setu"
                     width={60}
                     height={36}
@@ -99,7 +99,15 @@ export default function Scorecard() {
                   />
                 </div>
                 <div className="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <User className="w-12 h-12 text-blue-600" />
+                  {/* <User className="w-12 h-12 text-blue-600" /> */}
+                    
+                  <Image
+                    src="/Meenal-profile.jpg" 
+                    alt="Khel Setu"
+                    width={96}
+                    height={96}
+                    className="rounded-lg"
+                  />
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-2">Khelsetu Score Card</h2>
                 <p className="text-blue-100">Physical Fitness Assessment Results</p>
