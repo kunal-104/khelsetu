@@ -101,7 +101,7 @@ export default function Home() {
           </p>
           <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => setActiveVideo("/videos/Intro_Demo.mp4")} // <-- set your demo video here
+              onClick={() => setActiveVideo("/videos/demo.mp4")} // <-- set your demo video here
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg"
             >
               <Play size={20} />
