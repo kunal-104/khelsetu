@@ -57,7 +57,8 @@ export default function About() {
         <section ref={heroRef} className="text-center mb-20">
           <div className="about-hero">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              About <span className="gradient-text">Khelsetu</span>
+              About <span className="gradient-text">KHELSETU</span>
+              
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto text-pretty">
               We're revolutionizing sports talent assessment in India through AI-powered technology, making
