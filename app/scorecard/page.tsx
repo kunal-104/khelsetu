@@ -102,8 +102,8 @@ export default function Scorecard() {
                   {/* <User className="w-12 h-12 text-blue-600" /> */}
                     
                   <Image
-                    src="/Meenal-profile.jpg" 
-                    alt="Khel Setu"
+                    src="/Meenal_profile.jpg" 
+                    alt="Meenal"
                     width={96}
                     height={96}
                     className="rounded-lg"
