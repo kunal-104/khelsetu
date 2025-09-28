@@ -35,8 +35,7 @@ export default function Scorecard() {
     age: "17 years",
     gender: "Male",
     id: "AFI-ID-AHRM01234",
-    photo: "/Meenal-profile.jpg",
-    // photo: "/images/scorecard-demo.png",
+    photo: "/images/scorecard-demo.png",
     tests: [
       {
         name: "Push-ups",
@@ -93,7 +92,6 @@ export default function Scorecard() {
                 <div className="absolute top-4 left-4">
                   <Image
                     src="/Meenal-profile.jpg"
-                    {/* src="/images/khel-setu-logo.png" */}
                     alt="Khel Setu"
                     width={60}
                     height={36}
