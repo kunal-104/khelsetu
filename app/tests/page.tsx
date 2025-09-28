@@ -82,7 +82,7 @@ export default function TestsPage() {
       icon: "⬆️",
       description: "Lower body explosive power measurement using motion analysis",
       thumbnail: "/vertical-jump-exercise-demonstration.jpg",
-      videoSrc: "/vertical-jump-exercise-demonstration.jpg",
+      videoSrc: "/videos/vertical_jump.mp4",
       instructions: [
         "Wear appropriate athletic shoes with good grip",
         "Stand on a flat, stable surface",
